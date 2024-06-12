@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="newsDetailsViewModel"
+            type="android.example.newsapp.screens.newsdetails.NewsDetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        tools:context=".screens.newsdetails.NewsDetailsFragment">
+
+
+        <ImageView
+            android:id="@+id/newsImage"
+            android:layout_width="347dp"
+            android:layout_height="362dp"
+            android:layout_marginStart="4dp"
+            android:clickable="true"
+            android:onClick="@{() -> newsDetailsViewModel.onImageClicked()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.003"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.052"
+            tools:layout_conversion_absoluteHeight="359dp"
+            tools:layout_conversion_absoluteWidth="330dp"
+            tools:src="@tools:sample/avatars" />
+
+        <ScrollView
+            android:id="@+id/contentScroll"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="3dp"
+            android:scrollbars="horizontal|vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/newsImage"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_conversion_absoluteHeight="359dp"
+            tools:layout_conversion_absoluteWidth="619dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/titleText"
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:layout_weight="1"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:text="TextView"
+                    android:textIsSelectable="true"
+                    android:longClickable="true"
+                    android:focusable="true"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.641"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/contentText"
+                    android:layout_width="match_parent"
+                    android:layout_height="226dp"
+                    android:layout_weight="1"
+                    android:gravity="top|left"
+                    android:padding="10dp"
+                    android:scrollbars="vertical"
+                    android:text="TextView"
+                    android:textIsSelectable="true"
+                    android:longClickable="true"
+                    android:focusable="true"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.508"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleText"
+                    app:layout_constraintVertical_bias="0.195" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="146dp"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/shareArticleBtn"
+                        android:layout_width="80dp"
+                        android:layout_height="85dp"
+                        android:background="@color/transparent"
+                        android:backgroundTint="@color/transparent"
+                        android:onClick="@{() -> newsDetailsViewModel.onShareClicked()}"
+                        android:src="@mipmap/share_icon_round"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.332"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.262" />
+
+                    <ImageButton
+                        android:id="@+id/linkBtn"
+                        android:layout_width="65dp"
+                        android:layout_height="58dp"
+                        android:background="@color/transparent"
+                        android:backgroundTint="@color/transparent"
+                        android:onClick="@{() -> newsDetailsViewModel.onLinkClicked()}"
+                        android:src="@mipmap/link_icon_round"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.663"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.375" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

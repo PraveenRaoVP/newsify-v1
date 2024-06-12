@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">NewTsunami</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shareBtnDesc">Share Button</string>
+    <string name="expandArticleBtn">Click to View Details</string>
+    <string name="searchbar_hint">Search For News</string>
+</resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/newsListFragment">
+
+    <fragment
+        android:id="@+id/newsListFragment"
+        android:name="android.example.newsapp.screens.newslist.NewsListFragment"
+        android:label="News Application"
+        tools:layout="@layout/fragment_news_list" >
+        <action
+            android:id="@+id/action_newsListFragment_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsWebViewFragment"
+        android:name="android.example.newsapp.screens.newswebview.NewsWebViewFragment"
+        android:label="News"
+        tools:layout="@layout/fragment_news_web_view" >
+        <argument
+            android:name="webPageLink"
+            app:argType="string" />
+        <argument
+            android:name="webPageTitle"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_newsWebViewFragment_to_newsDetailsFragment"
+            app:destination="@id/newsDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="android.example.newsapp.screens.newsdetails.NewsDetailsFragment"
+        android:label="NewsDetailsFragment" >
+        <action
+            android:id="@+id/action_newsDetailsFragment_to_newsListFragment"
+            app:destination="@id/newsListFragment" />
+        <action
+            android:id="@+id/action_newsDetailsFragment_to_newsWebViewFragment"
+            app:destination="@id/newsWebViewFragment" />
+        <argument
+            android:name="newsTitle"
+            app:argType="string" />
+        <argument
+            android:name="newsContent"
+            app:argType="string" />
+        <argument
+            android:name="imageUrl"
+            app:argType="string" />
+        <argument
+            android:name="readMoreUrl"
+            app:argType="string" />
+    </fragment>
+</navigation>
